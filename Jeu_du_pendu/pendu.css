@@ -1,0 +1,142 @@
+/* === RESET === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* === FOND ET POLICE === */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #000;
+  color: #fff;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* === EN-TÊTE === */
+header {
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-portfolio {
+  text-decoration: none;
+  color: #fff;
+  background-color: #0b2a02;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.btn-portfolio:hover {
+  background-color: #114d06b4;
+}
+
+/* === CONTENU PRINCIPAL === */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  padding: 20px;
+}
+
+/* Animation légère sur le fond (vague de lumière) */
+main::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.08), transparent 70%);
+  animation: lightMove 10s infinite linear;
+}
+
+@keyframes lightMove {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(10%, 10%) rotate(180deg); }
+  100% { transform: translate(0, 0) rotate(360deg); }
+}
+
+/* === TITRE ET TEXTE === */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #012801;
+  letter-spacing: 1px;
+}
+
+p {
+  font-size: 1.1rem;
+  color: #ccc;
+  max-width: 500px;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+/* === BOUTON === */
+.btn-hero {
+  background-color: #03391a82;
+  color: white;
+  border: none;
+  padding: 14px 26px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.btn-hero:hover {
+  background-color: #06381bb6;
+  transform: scale(1.05);
+}
+
+/* === PIED DE PAGE === */
+footer {
+  text-align: center;
+  padding: 12px;
+  background-color: rgba(0, 0, 0, 0.85);
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* === ANIMATIONS D'APPARITION === */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1.8s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.slide-up {
+  opacity: 0;
+  animation: slideUp 2s ease forwards 0.3s;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.bounce {
+  animation: bounce 2s infinite ease-in-out 1.5s;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}

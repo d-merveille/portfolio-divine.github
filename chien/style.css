@@ -1,0 +1,84 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+header{
+    background-image: url(images/hero-img.jpg);
+    background-size: cover;
+    height: 100vh;
+    color: white;
+}
+/* Bouton Retour au Portfolio */
+.btn-portfolio {
+    position: fixed;       /* reste visible en scroll */
+    top: 20px;             /* distance du haut */
+    left: 20px;            /* distance de la gauche */
+    z-index: 1000;         /* devant tout le reste */
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #06562e;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-portfolio:hover {
+    background-color: black;
+    color: white;
+    transform: scale(1.05);
+}
+.me{
+    background-color: transparent;
+    color: white;
+    height: 70px;
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    margin-left:90px ;
+}
+.he{
+    float: left;
+    left: 200px;
+    margin-left:90px ;
+    margin-top: 80px;
+}
+img{
+    width: 10%;
+}
+
+
+.you{
+    color: white;
+    border: 1px solid white;
+    padding: 10px;
+   text-align: center; 
+}
+
+a{
+    color: white;
+     margin: 10px 5px;
+    text-decoration:none;
+    text-align: center;
+}
+.voiture{
+    margin-top: 200px;
+    margin-left: 90px;
+}
+.voiture p{
+    display: inline-block;
+}
+.voiture a{
+    border: 1px solid white;
+    border-radius: 20px;
+    padding: 10px;
+   text-align: center; 
+}
