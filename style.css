@@ -8,28 +8,64 @@
 
 /* -------------------- Barre de navigation -------------------- */
 
+/* HEADER GLASSMORPHISM */
+.glass-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    z-index: 1000;
+}
+
+/* BARRE DE TITRE */
 .barre_de_titre {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 30px;
-    background: #111;
+    padding: 12px 40px;
 }
 
+/* LOGO */
+.logo {
+    height: 45px;
+}
 
+/* NAV DESKTOP */
 .nav-links {
     display: flex;
-    gap: 25px;
+    gap: 30px;
     list-style: none;
 }
 
 .nav-links a {
     color: white;
     text-decoration: none;
+    font-size: 1.1rem;
     font-weight: 500;
+    position: relative;
+    transition: 0.3s;
 }
 
-/* Bouton burger (caché sur PC) */
+/* SOULIGNEMENT ANIMÉ */
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: #00eaff;
+    transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* BURGER */
 .burger {
     display: none;
     flex-direction: column;
@@ -38,23 +74,26 @@
 }
 
 .burger span {
-    width: 25px;
+    width: 28px;
     height: 3px;
     background: white;
     transition: 0.3s;
 }
 
-/* Responsive */
+/* RESPONSIVE */
 @media (max-width: 768px) {
 
     .nav-links {
         position: absolute;
         top: 80px;
-        right: -220px;
-        background: #111;
+        right: -250px;
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(15px);
         flex-direction: column;
-        width: 200px;
-        padding: 20px;
+        width: 220px;
+        padding: 25px;
+        gap: 20px;
+        border-left: 1px solid rgba(255, 255, 255, 0.2);
         transition: 0.3s;
     }
 
@@ -65,12 +104,22 @@
     .burger {
         display: flex;
     }
+
+    /* ANIMATION BURGER → CROIX */
+    .burger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .burger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
 }
 
 
-nav ul a:hover, .active {
-    color: #0fc57c;
-}
 
 /* -------------------- Section Hero -------------------- */
 .hero {
