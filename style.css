@@ -7,7 +7,7 @@
 
 }
 
-/* -------------------- NAVBAR GLASSMORPHISM MODERNE -------------------- */
+/* -------------------- NAVBAR MODERNE EN HAUT -------------------- */
 
 .glass-header {
     position: fixed;
@@ -15,9 +15,9 @@
     width: 100%;
     padding: 18px 50px;
 
-    background: rgba(0, 0, 0, 0.45);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
+    background: rgba(255, 255, 255, 0.05); /* lumineux */
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
 
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     z-index: 1000;
@@ -31,7 +31,7 @@
 
 .logo {
     height: 50px;
-    filter: brightness(1.1);
+    filter: brightness(1.2);
 }
 
 /* MENU */
@@ -122,6 +122,7 @@
         transform: rotate(-45deg) translate(6px, -6px);
     }
 }
+
 
 /* -------------------- HERO CENTRÉ PARFAITEMENT -------------------- */
 
