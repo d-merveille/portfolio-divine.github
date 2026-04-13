@@ -7,35 +7,66 @@
 }
 
 /* -------------------- Barre de navigation -------------------- */
+
 .barre_de_titre {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
-    background-color: rgba(227, 222, 222, 0.3);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
+    padding: 15px 30px;
+    background: #111;
 }
 
-.logo {
-    width: 90px;
-}
 
-nav ul {
-    list-style: none;
+.nav-links {
     display: flex;
-    gap: 30px;
+    gap: 25px;
+    list-style: none;
 }
 
-nav ul a {
-    color: black;
+.nav-links a {
+    color: white;
     text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
+    font-weight: 500;
 }
+
+/* Bouton burger (caché sur PC) */
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.burger span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    transition: 0.3s;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+    .nav-links {
+        position: absolute;
+        top: 80px;
+        right: -220px;
+        background: #111;
+        flex-direction: column;
+        width: 200px;
+        padding: 20px;
+        transition: 0.3s;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .burger {
+        display: flex;
+    }
+}
+
 
 nav ul a:hover, .active {
     color: #0fc57c;
