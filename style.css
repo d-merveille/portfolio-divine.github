@@ -191,46 +191,47 @@
     transform: scale(1.05);
 }
 
-/* -------------------- SECTION PRÉSENTATION MODERNE -------------------- */
+/* -------------------- PRÉSENTATION PARFAITEMENT ÉQUILIBRÉE -------------------- */
 
 .presentation {
     text-align: center;
-    padding: 80px 20px;
-    background: #0d0d0d;
+    padding: 90px 20px;
 }
 
 .presentation h2 {
-    font-size: 2.6rem;
+    font-size: 2.4rem;
     font-weight: 700;
     color: #0fc57c;
     margin-bottom: 10px;
 }
 
 .presentation hr {
-    width: 90px;
+    width: 70px;
     height: 3px;
-    border: none;
     background: #0fc57c;
-    margin: 20px auto 35px;
     border-radius: 20px;
+    margin: 15px auto 35px;
 }
 
+/* Photo */
+.photo-profil {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #0fc57c;
+    margin-bottom: 25px;
+}
+
+/* Texte */
 .presentation p {
     max-width: 750px;
     margin: 0 auto;
     line-height: 1.8;
     font-size: 1.1rem;
-    color: #fff;
+    color: #e5e5e5;
 }
 
-.photo-profil {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #0fc57c;
-    margin-bottom: 20px;
-}
 
 /* -------------------- CERTIFICATIONS COMPACTES -------------------- */
 
