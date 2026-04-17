@@ -15,15 +15,10 @@ body {
     color: white;
 }
 
-/* -------------------- TRANSITIONS PRO -------------------- */
-a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.25s ease;
-}
+/* -------------------- TRANSITIONS PRO GLOBALES -------------------- */
 
-a:hover {
-    color: #0fc57c;
+a {
+    transition: color 0.25s ease;
 }
 
 .btn-hero {
@@ -62,6 +57,7 @@ h2 {
 }
 
 /* -------------------- NAVBAR -------------------- */
+
 .glass-header {
     position: fixed;
     top: 0;
@@ -93,6 +89,7 @@ h2 {
 
 .nav-links a {
     color: white;
+    text-decoration: none;
     font-size: 1.15rem;
     font-weight: 500;
     position: relative;
@@ -129,6 +126,7 @@ h2 {
 }
 
 /* -------------------- RESPONSIVE NAV -------------------- */
+
 @media (max-width: 900px) {
     .nav-links {
         position: absolute;
@@ -166,6 +164,7 @@ h2 {
 }
 
 /* -------------------- HERO -------------------- */
+
 .hero {
     height: 100vh;
     display: flex;
@@ -197,9 +196,11 @@ h2 {
 .hero-content {
     position: relative;
     text-align: center;
+    color: white;
     z-index: 1;
 }
 
+/* Texte hero déroulant */
 .hero-content h1,
 .hero-content p,
 .hero-content .btn-hero {
@@ -238,6 +239,7 @@ h2 {
 }
 
 /* -------------------- EFFET DÉROULANT GLOBAL -------------------- */
+
 .reveal {
     opacity: 0;
     transform: translateY(40px);
@@ -249,12 +251,14 @@ h2 {
 }
 
 /* -------------------- TITRES -------------------- */
+
 h2, h3, h4 {
     text-align: center;
     color: #0fc57c;
     margin-bottom: 15px;
 }
 
+/* Hover premium h2 */
 h2 {
     display: inline-block;
     padding-bottom: 6px;
@@ -266,6 +270,7 @@ h2:hover {
 }
 
 /* -------------------- PRESENTATION -------------------- */
+
 .presentation {
     text-align: center;
     padding: 80px 20px;
@@ -289,6 +294,7 @@ h2:hover {
 }
 
 /* -------------------- CERTIFICATIONS -------------------- */
+
 .certifications {
     padding: 60px 20px;
     background: #111;
@@ -328,6 +334,7 @@ h2:hover {
 }
 
 /* -------------------- PROJETS -------------------- */
+
 .projects-grid {
     display: flex;
     flex-wrap: wrap;
@@ -368,6 +375,7 @@ h2:hover {
 }
 
 /* -------------------- FOOTER -------------------- */
+
 .footer {
     background: #0d0d0d;
     padding: 60px 20px;
@@ -395,6 +403,7 @@ h2:hover {
 }
 
 /* -------------------- RESPONSIVE GLOBAL -------------------- */
+
 @media (max-width: 1100px) {
     .hero-content h1 { font-size: 3.2rem; }
     .hero-content p { font-size: 1.4rem; }
@@ -402,6 +411,7 @@ h2:hover {
 }
 
 @media (max-width: 768px) {
+
     .hero-content h1 { font-size: 2.4rem; }
     .hero-content p { font-size: 1.2rem; }
     .btn-hero { padding: 12px 28px; font-size: 0.95rem; }
@@ -426,6 +436,7 @@ h2:hover {
 }
 
 @media (max-width: 480px) {
+
     .hero-content h1 { font-size: 2rem; }
     .hero-content p { font-size: 1rem; }
     .btn-hero { padding: 10px 24px; font-size: 0.9rem; }
