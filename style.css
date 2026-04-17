@@ -4,39 +4,47 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-
 }
 
-/* -------------------- NAVBAR MODERNE EN HAUT + MENU CENTRÉ -------------------- */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #0a0a0a;
+    color: white;
+}
+
+/* -------------------- NAVBAR (inchangée sauf légère amélioration visuelle) -------------------- */
 
 .glass-header {
     position: fixed;
     top: 0;
     width: 100%;
     padding: 18px 50px;
-
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(18px) saturate(180%);
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     z-index: 1000;
+    animation: slideDown 0.7s ease forwards;
 }
 
-/* On utilise un GRID pour centrer le menu */
+@keyframes slideDown {
+    from { transform: translateY(-40px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
 .barre_de_titre {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
 }
 
-/* Logo à gauche */
 .logo {
     height: 50px;
     justify-self: start;
 }
 
-/* MENU CENTRÉ */
 .nav-links {
     display: flex;
     gap: 40px;
@@ -54,7 +62,6 @@
     transition: 0.3s ease;
 }
 
-/* Soulignement animé — couleur Divine */
 .nav-links a::after {
     content: "";
     position: absolute;
@@ -71,13 +78,12 @@
     width: 100%;
 }
 
-/* Burger à droite */
 .burger {
     display: none;
     flex-direction: column;
     cursor: pointer;
     gap: 6px;
-    justify-self: end; /* À DROITE */
+    justify-self: end;
 }
 
 .burger span {
@@ -87,14 +93,9 @@
     transition: 0.3s ease;
 }
 
-/* -------------------- RESPONSIVE -------------------- */
+/* -------------------- RESPONSIVE NAV -------------------- */
 
 @media (max-width: 900px) {
-
-    .barre_de_titre {
-        grid-template-columns: 1fr auto 1fr;
-    }
-
     .nav-links {
         position: absolute;
         top: 80px;
@@ -103,7 +104,6 @@
         width: 230px;
         padding: 30px 20px;
         gap: 25px;
-
         background: rgba(0, 0, 0, 0.55);
         backdrop-filter: blur(20px);
         border-left: 2px solid #0fc57c;
@@ -131,9 +131,7 @@
     }
 }
 
-
-
-/* -------------------- HERO CENTRÉ PARFAITEMENT -------------------- */
+/* -------------------- HERO ANIMÉ -------------------- */
 
 .hero {
     height: 100vh;
@@ -144,8 +142,13 @@
     background-image: url("image/pc.jpg");
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
+    animation: zoomHero 12s ease-in-out infinite alternate;
+}
 
-    padding: 0; /* On enlève le padding-top qui cassait le centrage */
+@keyframes zoomHero {
+    from { background-size: 100%; }
+    to { background-size: 108%; }
 }
 
 .overlay {
@@ -159,6 +162,13 @@
     text-align: center;
     color: white;
     z-index: 1;
+    opacity: 0;
+    animation: fadeUp 1.2s ease forwards;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .hero-content h1 {
@@ -191,7 +201,20 @@
     transform: scale(1.05);
 }
 
-/* -------------------- PRÉSENTATION PARFAITEMENT ÉQUILIBRÉE -------------------- */
+/* -------------------- SCROLL REVEAL -------------------- */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.9s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* -------------------- PRÉSENTATION -------------------- */
 
 .presentation {
     text-align: center;
@@ -215,7 +238,6 @@
     margin: 15px auto 35px;
 }
 
-/* Photo */
 .photo-profil {
     width: 130px;
     height: 130px;
@@ -225,7 +247,6 @@
     margin-bottom: 25px;
 }
 
-/* Texte */
 .presentation p {
     max-width: 750px;
     margin: 0 auto;
@@ -234,8 +255,7 @@
     color: #e5e5e5;
 }
 
-
-/* -------------------- CERTIFICATIONS COMPACTES -------------------- */
+/* -------------------- CERTIFICATIONS -------------------- */
 
 .certifications {
     padding: 50px 20px;
@@ -250,14 +270,6 @@
     color: #0fc57c;
 }
 
-.certifications hr {
-    width: 60px;
-    height: 3px;
-    background: #0fc57c;
-    border-radius: 20px;
-    margin: 10px auto 30px;
-}
-
 .cert-grid {
     display: flex;
     flex-wrap: wrap;
@@ -265,23 +277,20 @@
     gap: 25px;
 }
 
-/* Cards plus petites */
 .cert-card {
     width: 240px;
     padding: 18px;
     border-radius: 15px;
-
     background: rgba(255, 255, 255, 0.06);
     backdrop-filter: blur(6px);
     border: 1px solid rgba(255, 255, 255, 0.12);
-
     box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-    transition: 0.3s ease;
+    transition: 0.35s ease;
 }
 
 .cert-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    transform: translateY(-10px) scale(1.04);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.35);
 }
 
 .cert-card img {
@@ -303,13 +312,34 @@
     color: #d0d0d0;
 }
 
+/* -------------------- PROJETS -------------------- */
 
-/* -------------------- FOOTER MODERNE -------------------- */
+.container {
+    width: 260px;
+    margin: 30px auto;
+    text-align: center;
+    transition: 0.35s ease;
+}
+
+.container:hover {
+    transform: translateY(-10px) scale(1.04);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+}
+
+.cadre {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+/* -------------------- FOOTER -------------------- */
 
 .footer {
     background: #0d0d0d;
     padding: 60px 20px;
     color: #d1d1d1;
+    text-align: center;
+    animation: fadeUp 1.2s ease forwards;
 }
 
 .footer-title {
@@ -326,4 +356,3 @@
 .footer-info a:hover {
     color: #0fc57c;
 }
-
