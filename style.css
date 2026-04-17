@@ -13,10 +13,96 @@ html {
 body {
     background: #0a0a0a;
     color: white;
+    transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* -------------------- DARK / LIGHT MODE -------------------- */
+.theme-toggle {
+    cursor: pointer;
+    font-size: 1.4rem;
+    user-select: none;
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.15);
+}
+
+.light-mode {
+    background: #f5f5f5;
+    color: #111;
+}
+
+.light-mode .glass-header {
+    background: rgba(255, 255, 255, 0.6);
+    border-bottom: 1px solid rgba(0,0,0,0.15);
+}
+
+.light-mode a {
+    color: #111;
+}
+
+.light-mode a:hover {
+    color: #0fc57c;
+}
+
+.light-mode .presentation,
+.light-mode .certifications,
+.light-mode .footer {
+    background: #ffffff;
+    color: #111;
+}
+
+.light-mode .container,
+.light-mode .cert-card {
+    background: #f0f0f0;
+}
+
+.light-mode .footer-copy {
+    color: #444;
+}
+
+/* -------------------- TRANSITIONS PRO -------------------- */
+a {
+    transition: color 0.25s ease;
+}
+
+.btn-hero {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cert-card,
+.container {
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.nav-links a {
+    transition: color 0.25s ease, opacity 0.25s ease;
+}
+
+.burger span {
+    transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+h2 {
+    transition: border-color 0.35s ease;
+}
+
+.reveal {
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.cadre,
+.cert-card img,
+.photo-profil {
+    transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.footer-info a {
+    transition: color 0.25s ease;
 }
 
 /* -------------------- NAVBAR -------------------- */
-
 .glass-header {
     position: fixed;
     top: 0;
@@ -26,24 +112,19 @@ body {
     backdrop-filter: blur(18px) saturate(180%);
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     z-index: 1000;
-}
-
-.barre_de_titre {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
 .logo {
     height: 50px;
-    justify-self: start;
 }
 
 .nav-links {
     display: flex;
     gap: 40px;
     list-style: none;
-    justify-self: center;
 }
 
 .nav-links a {
@@ -52,7 +133,6 @@ body {
     font-size: 1.15rem;
     font-weight: 500;
     position: relative;
-    transition: 0.3s ease;
 }
 
 .nav-links a::after {
@@ -64,7 +144,7 @@ body {
     height: 3px;
     background: #0fc57c;
     border-radius: 10px;
-    transition: 0.3s ease;
+    transition: width 0.3s ease;
 }
 
 .nav-links a:hover::after {
@@ -76,18 +156,15 @@ body {
     flex-direction: column;
     cursor: pointer;
     gap: 6px;
-    justify-self: end;
 }
 
 .burger span {
     width: 30px;
     height: 3px;
     background: white;
-    transition: 0.3s ease;
 }
 
 /* -------------------- RESPONSIVE NAV -------------------- */
-
 @media (max-width: 900px) {
     .nav-links {
         position: absolute;
@@ -100,7 +177,7 @@ body {
         background: rgba(0, 0, 0, 0.55);
         backdrop-filter: blur(20px);
         border-left: 2px solid #0fc57c;
-        transition: 0.35s ease;
+        transition: right 0.35s ease;
     }
 
     .nav-links.active {
@@ -125,7 +202,6 @@ body {
 }
 
 /* -------------------- HERO -------------------- */
-
 .hero {
     height: 100vh;
     display: flex;
@@ -136,7 +212,6 @@ body {
     background-size: cover;
     background-position: center;
 
-    /* Animation d’entrée */
     opacity: 0;
     transform: scale(1.05);
     animation: heroEnter 1.2s ease forwards;
@@ -158,36 +233,26 @@ body {
 .hero-content {
     position: relative;
     text-align: center;
-    color: white;
     z-index: 1;
 }
 
-/* Animation texte hero */
 .hero-content h1,
 .hero-content p,
 .hero-content .btn-hero {
     opacity: 0;
-    transform: translateY(20px);
-    transition: 0.6s ease;
+    transform: translateY(-25px);
+    animation: slideDown 0.9s ease forwards;
 }
 
-.hero-content h1 {
-    transition-delay: 0.2s;
-}
+.hero-content h1 { animation-delay: 0.2s; }
+.hero-content p { animation-delay: 0.45s; }
+.hero-content .btn-hero { animation-delay: 0.7s; }
 
-.hero-content p {
-    transition-delay: 0.45s;
-}
-
-.hero-content .btn-hero {
-    transition-delay: 0.7s;
-}
-
-.hero-content.visible h1,
-.hero-content.visible p,
-.hero-content.visible .btn-hero {
-    opacity: 1;
-    transform: translateY(0);
+@keyframes slideDown {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .hero-content h1 {
@@ -203,28 +268,15 @@ body {
     margin-bottom: 25px;
 }
 
-.btn-hero {
-    display: inline-block;
-    padding: 14px 35px;
-    background-color: #0fc57c;
-    color: white;
-    font-weight: 600;
-    text-decoration: none;
-    border-radius: 10px;
-    transition: 0.3s ease;
-}
-
 .btn-hero:hover {
     background-color: #0aa864;
     transform: scale(1.05);
 }
 
-/* -------------------- SCROLL REVEAL -------------------- */
-
+/* -------------------- EFFET DÉROULANT GLOBAL -------------------- */
 .reveal {
     opacity: 0;
-    transform: translateY(30px);
-    transition: 0.6s ease;
+    transform: translateY(40px);
 }
 
 .reveal.visible {
@@ -232,69 +284,28 @@ body {
     transform: translateY(0);
 }
 
-/* -------------------- ALIGNEMENT GLOBAL -------------------- */
-
-section {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* -------------------- LIENS PRO -------------------- */
-
-a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: #0fc57c;
-}
-
+/* -------------------- TITRES -------------------- */
 h2, h3, h4 {
     text-align: center;
     color: #0fc57c;
     margin-bottom: 15px;
-    opacity: 0;
-    transform: translateY(-20px);
-    animation: titlesSlideDown 0.8s ease forwards;
 }
 
-@keyframes titlesSlideDown {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* -------------------- PRESENTATION -------------------- */
 h2 {
     display: inline-block;
     padding-bottom: 6px;
     border-bottom: 2px solid transparent;
-    transition: border-color 0.3s ease;
 }
 
 h2:hover {
-    border-bottom: 2px solid #0fc57c; /* même vert que tes titres */
+    border-bottom: 2px solid #0fc57c;
 }
 
+/* -------------------- PRESENTATION -------------------- */
 .presentation {
     text-align: center;
     padding: 80px 20px;
     background: #0d0d0d;
-    opacity: 0;
-    transform: translateY(25px);
-    animation: presentationSlide 0.9s ease forwards;
-    animation-delay: 0.2s;
-}
-
-@keyframes presentationSlide {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 .presentation p {
@@ -314,7 +325,6 @@ h2:hover {
 }
 
 /* -------------------- CERTIFICATIONS -------------------- */
-
 .certifications {
     padding: 60px 20px;
     background: #111;
@@ -333,7 +343,6 @@ h2:hover {
     background: #1a1a1a;
     border-radius: 12px;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .cert-card:hover {
@@ -355,7 +364,6 @@ h2:hover {
 }
 
 /* -------------------- PROJETS -------------------- */
-
 .projects-grid {
     display: flex;
     flex-wrap: wrap;
@@ -375,7 +383,6 @@ h2:hover {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .container:hover {
@@ -397,7 +404,6 @@ h2:hover {
 }
 
 /* -------------------- FOOTER -------------------- */
-
 .footer {
     background: #0d0d0d;
     padding: 60px 20px;
@@ -414,10 +420,6 @@ h2:hover {
     margin: 10px 0;
 }
 
-.footer-info a {
-    color: white;
-}
-
 .footer-info a:hover {
     color: #0fc57c;
 }
@@ -426,4 +428,48 @@ h2:hover {
     margin-top: 20px;
     font-size: 0.9rem;
     color: #888;
+}
+
+/* -------------------- RESPONSIVE GLOBAL -------------------- */
+@media (max-width: 1100px) {
+    .hero-content h1 { font-size: 3.2rem; }
+    .hero-content p { font-size: 1.4rem; }
+    section { padding: 60px 20px; }
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 { font-size: 2.4rem; }
+    .hero-content p { font-size: 1.2rem; }
+    .btn-hero { padding: 12px 28px; font-size: 0.95rem; }
+
+    .presentation { padding: 60px 20px; }
+    .presentation p { font-size: 0.95rem; }
+
+    .photo-profil { width: 110px; height: 110px; }
+
+    .cert-card,
+    .container {
+        width: 90%;
+        max-width: 320px;
+        height: auto;
+    }
+
+    .cadre { height: 160px; }
+
+    h2 { font-size: 1.6rem; }
+
+    .footer { padding: 40px 20px; }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 { font-size: 2rem; }
+    .hero-content p { font-size: 1rem; }
+    .btn-hero { padding: 10px 24px; font-size: 0.9rem; }
+
+    h2 { font-size: 1.4rem; }
+
+    .cert-card,
+    .container {
+        width: 100%;
+    }
 }
