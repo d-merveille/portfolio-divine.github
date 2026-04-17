@@ -135,6 +135,18 @@ body {
     background-image: url("image/pc.jpg");
     background-size: cover;
     background-position: center;
+
+    /* Animation d’entrée */
+    opacity: 0;
+    transform: scale(1.05);
+    animation: heroEnter 1.2s ease forwards;
+}
+
+@keyframes heroEnter {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .overlay {
@@ -148,6 +160,34 @@ body {
     text-align: center;
     color: white;
     z-index: 1;
+}
+
+/* Animation texte hero */
+.hero-content h1,
+.hero-content p,
+.hero-content .btn-hero {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.6s ease;
+}
+
+.hero-content h1 {
+    transition-delay: 0.2s;
+}
+
+.hero-content p {
+    transition-delay: 0.45s;
+}
+
+.hero-content .btn-hero {
+    transition-delay: 0.7s;
+}
+
+.hero-content.visible h1,
+.hero-content.visible p,
+.hero-content.visible .btn-hero {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .hero-content h1 {
@@ -183,8 +223,8 @@ body {
 
 .reveal {
     opacity: 0;
-    transform: translateY(40px);
-    transition: 0.8s ease;
+    transform: translateY(30px);
+    transition: 0.6s ease;
 }
 
 .reveal.visible {
@@ -200,24 +240,32 @@ section {
     margin: 0 auto;
 }
 
-/* -------------------- TITRES -------------------- */
+/* -------------------- LIENS PRO -------------------- */
+
+a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0fc57c;
+}
 
 h2, h3, h4 {
     text-align: center;
     color: #0fc57c;
     margin-bottom: 15px;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: titlesSlideDown 0.8s ease forwards;
 }
 
-/* -------------------- LIENS PRO (BLANCS + HOVER) -------------------- */
-
-a {
-    color: white;
-    text-decoration: none;
-    transition: 0.3s ease;
-}
-
-a:hover {
-    color: #0fc57c;
+@keyframes titlesSlideDown {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* -------------------- PRESENTATION -------------------- */
@@ -226,6 +274,17 @@ a:hover {
     text-align: center;
     padding: 80px 20px;
     background: #0d0d0d;
+    opacity: 0;
+    transform: translateY(25px);
+    animation: presentationSlide 0.9s ease forwards;
+    animation-delay: 0.2s;
+}
+
+@keyframes presentationSlide {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .presentation p {
@@ -264,11 +323,12 @@ a:hover {
     background: #1a1a1a;
     border-radius: 12px;
     text-align: center;
-    transition: 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .cert-card:hover {
     transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.35);
 }
 
 .cert-card img {
@@ -296,18 +356,34 @@ a:hover {
 
 .container {
     width: 260px;
+    height: 350px;
+    background: #111;
+    border-radius: 12px;
+    padding: 15px;
     text-align: center;
-    transition: 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .container:hover {
     transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.35);
 }
 
 .cadre {
     width: 100%;
-    border-radius: 12px;
-    margin-bottom: 10px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 12px;
+}
+
+.container p {
+    color: #ccc;
+    font-size: 0.95rem;
 }
 
 /* -------------------- FOOTER -------------------- */
