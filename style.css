@@ -180,20 +180,19 @@ h2 {
     transform: scale(1.05);
     animation: heroEnter 1.2s ease forwards;
 }
-/* Bouton hero simple et propre */
-.btn-hero {
+.hero .btn-hero {
     display: inline-block;
     padding: 14px 32px;
     font-size: 1.1rem;
     font-weight: 600;
-    color: white !important;
+    color: white;
     border: 2px solid #0fc57c;
     border-radius: 6px;
     transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
 }
 
 /* Hover simple */
-.btn-hero:hover {
+.hero .btn-hero:hover {
     background-color: #0fc57c;
     color: black !important;
     transform: scale(1.03);
