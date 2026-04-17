@@ -15,33 +15,6 @@ body {
     color: white;
 }
 
-/* -------------------- FIX LIENS BLEUS -------------------- */
-a, a:visited, a:active {
-    color: white !important;
-    text-decoration: none;
-}
-
-a:hover {
-    color: #0fc57c !important;
-}
-
-/* Fix spécifique bouton hero */
-.btn-hero,
-.btn-hero:visited,
-.btn-hero:active {
-    color: white !important;
-}
-
-/* Fix footer */
-.footer-info a,
-.footer-info a:visited,
-.footer-info a:active {
-    color: white !important;
-}
-
-.footer-info a:hover {
-    color: #0fc57c !important;
-}
 
 /* -------------------- TRANSITIONS PRO GLOBALES -------------------- */
 
@@ -207,6 +180,25 @@ h2 {
     transform: scale(1.05);
     animation: heroEnter 1.2s ease forwards;
 }
+/* Bouton hero simple et propre */
+.btn-hero {
+    display: inline-block;
+    padding: 14px 32px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white !important;
+    border: 2px solid #0fc57c;
+    border-radius: 6px;
+    transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+/* Hover simple */
+.btn-hero:hover {
+    background-color: #0fc57c;
+    color: black !important;
+    transform: scale(1.03);
+}
+
 
 @keyframes heroEnter {
     to {
@@ -428,6 +420,33 @@ h2:hover {
     margin-top: 20px;
     font-size: 0.9rem;
     color: #888;
+}
+/* -------------------- FIX LIENS BLEUS -------------------- */
+a, a:visited, a:active {
+    color: white !important;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #0fc57c !important;
+}
+
+/* Fix spécifique bouton hero */
+.btn-hero,
+.btn-hero:visited,
+.btn-hero:active {
+    color: white !important;
+}
+
+/* Fix footer */
+.footer-info a,
+.footer-info a:visited,
+.footer-info a:active {
+    color: white !important;
+}
+
+.footer-info a:hover {
+    color: #0fc57c !important;
 }
 
 /* -------------------- RESPONSIVE GLOBAL -------------------- */
