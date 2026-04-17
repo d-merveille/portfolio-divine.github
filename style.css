@@ -194,7 +194,7 @@ h2 {
 /* Hover simple */
 .hero .btn-hero:hover {
     background-color: #0fc57c;
-    color: black !important;
+    color: black;
     transform: scale(1.03);
 }
 
