@@ -15,6 +15,34 @@ body {
     color: white;
 }
 
+/* -------------------- FIX LIENS BLEUS -------------------- */
+a, a:visited, a:active {
+    color: white !important;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #0fc57c !important;
+}
+
+/* Fix spécifique bouton hero */
+.btn-hero,
+.btn-hero:visited,
+.btn-hero:active {
+    color: white !important;
+}
+
+/* Fix footer */
+.footer-info a,
+.footer-info a:visited,
+.footer-info a:active {
+    color: white !important;
+}
+
+.footer-info a:hover {
+    color: #0fc57c !important;
+}
+
 /* -------------------- TRANSITIONS PRO GLOBALES -------------------- */
 
 a {
