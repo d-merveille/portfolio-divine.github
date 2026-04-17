@@ -192,58 +192,63 @@ body {
     transform: translateY(0);
 }
 
+/* -------------------- ALIGNEMENT GLOBAL -------------------- */
+
+section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* -------------------- TITRES -------------------- */
+
+h2, h3, h4 {
+    text-align: center;
+    color: #0fc57c;
+    margin-bottom: 15px;
+}
+
+/* -------------------- LIENS PRO (BLANCS + HOVER) -------------------- */
+
+a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+a:hover {
+    color: #0fc57c;
+}
+
 /* -------------------- PRESENTATION -------------------- */
 
 .presentation {
     text-align: center;
-    padding: 90px 20px;
+    padding: 80px 20px;
     background: #0d0d0d;
-    color: #d0d0d0;
 }
 
-.presentation h2 {
-    font-size: 2.4rem;
-    font-weight: 700;
-    color: #0fc57c;
-}
-
-.presentation hr {
-    width: 70px;
-    height: 3px;
-    background: #0fc57c;
-    border-radius: 20px;
-    margin: 15px auto 35px;
+.presentation p {
+    max-width: 750px;
+    margin: 0 auto;
+    line-height: 1.7;
+    color: #e5e5e5;
 }
 
 .photo-profil {
     width: 130px;
     height: 130px;
     border-radius: 50%;
-    object-fit: cover;
     border: 3px solid #0fc57c;
-    margin-bottom: 25px;
-}
-
-.presentation p {
-    max-width: 750px;
-    margin: 0 auto;
-    line-height: 1.8;
-    font-size: 1.1rem;
-    color: #e5e5e5;
+    object-fit: cover;
+    margin-bottom: 20px;
 }
 
 /* -------------------- CERTIFICATIONS -------------------- */
 
 .certifications {
-    padding: 50px 20px;
-    background: rgba(255, 255, 255, 0.02);
-    border-radius: 20px;
-}
-
-.certifications h2 {
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: #0fc57c;
+    padding: 60px 20px;
+    background: #111;
 }
 
 .cert-grid {
@@ -256,16 +261,14 @@ body {
 .cert-card {
     width: 240px;
     padding: 18px;
-    border-radius: 15px;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-    transition: 0.35s ease;
+    background: #1a1a1a;
+    border-radius: 12px;
     text-align: center;
+    transition: 0.3s ease;
 }
 
 .cert-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
 }
 
 .cert-card img {
@@ -273,28 +276,15 @@ body {
     height: 140px;
     object-fit: cover;
     border-radius: 10px;
-    margin-bottom: 12px;
-}
-
-.cert-card h3 {
-    color: #0fc57c;
-    font-size: 1.2rem;
-    margin-bottom: 6px;
+    margin-bottom: 10px;
 }
 
 .cert-card p {
+    color: #ccc;
     font-size: 0.9rem;
-    color: #d0d0d0;
 }
 
 /* -------------------- PROJETS -------------------- */
-
-.section-title {
-    font-size: 2.4rem;
-    color: #0fc57c;
-    text-align: center;
-    margin-bottom: 20px;
-}
 
 .projects-grid {
     display: flex;
@@ -311,7 +301,7 @@ body {
 }
 
 .container:hover {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
 }
 
 .cadre {
@@ -325,20 +315,13 @@ body {
 .footer {
     background: #0d0d0d;
     padding: 60px 20px;
-    color: #d1d1d1;
     text-align: center;
-}
-
-.footer-title {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #0fc57c;
-    margin-bottom: 25px;
+    color: #d1d1d1;
 }
 
 .footer-info {
     list-style: none;
-    margin-bottom: 20px;
+    padding: 0;
 }
 
 .footer-info li {
@@ -346,9 +329,7 @@ body {
 }
 
 .footer-info a {
-    color: #d1d1d1;
-    text-decoration: none;
-    transition: 0.3s ease;
+    color: white;
 }
 
 .footer-info a:hover {
