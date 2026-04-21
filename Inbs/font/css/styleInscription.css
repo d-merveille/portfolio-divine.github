@@ -1,0 +1,202 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+html{
+    /* ***Variables For Storing Colors */
+    --primary-clr: #fff;
+    --primary-medium-clr: #2054EA;
+    --primary-light-clr: #FF8900;
+    --light-text-clr: #707070;
+    --bg-clr-1: #f1f1f1;
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* *** Style Container Starts *** */
+.inscription{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1440px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 0 8%;
+    overflow: hidden;
+    background-image: url(../src/imgContact/img1.jpg);
+    background-position: center;
+}
+.inscription form{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primary-clr);
+    width: 430px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.inscription form .logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.inscription form .logo svg{
+    height: 100px;
+}
+.inscription form h2{
+    text-align: center;
+    margin: 20px 0;
+}
+.inscription form input[type="text"], .inscription form input[type="email"], .inscription form input[type="password"]{
+    width: 100%;
+    font-size: 16px;
+    padding: 10px 30px 10px 10px;
+    margin: 10px 0;
+    outline: none;
+}
+.inscription form input[type="text"]:focus, .inscription form input[type="email"]:focus, .inscription form input[type="password"]:focus{
+    border-color: var(--primary-medium-clr);
+    box-shadow: 0 0 5px 0 var(--primary-medium-clr);
+}
+form #password-container{
+    position: relative;
+}
+form #password-container .password-icon{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    width: 20px;
+    transition: all 0.2s;
+}
+form #password-container .password-icon .eye-off{
+    display: none;
+}
+form #password-container .password-icon:hover{
+    cursor: pointer;
+    fill: var(--primary-medium-clr);
+}
+.inscription form .btnRadio{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+#btn{
+    padding: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    outline: none;
+    border: none;
+    background-color: var(--primary-medium-clr);
+    color: var(--primary-clr);
+    cursor: pointer;
+    transition: all 0.4s;
+}
+#btn:hover{
+    background-color: var(--primary-light-clr);
+}
+.connexion{
+    text-align: center;
+    margin: 20px 0;
+    color: var(--primary-medium-clr);
+    text-decoration: none;
+}
+#otherConnect{
+    text-align: center;
+    margin: 0 0 20px 0;
+}
+.other{
+    display: flex;
+    justify-content: center;
+}
+.other #google{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px; 
+    background-color: #ee2906;
+    margin: 0 5px;
+    overflow: hidden;
+}
+.other #google a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.other #google svg{
+    height: 15px;
+    fill: var(--primary-clr);
+}
+.other #twitter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px; 
+    background-color: #1bdaca;
+    margin: 0 5px;
+    overflow: hidden;
+}
+.other #twitter a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.other #twitter svg{
+    height: 15px;
+    fill: var(--primary-clr);
+}
+.other #facebook{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px; 
+    background-color: #2054EA;
+    margin: 0 5px;
+    overflow: hidden;
+}
+.other #facebook a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.other #facebook svg{
+    height: 15px;
+    fill: var(--primary-clr);
+}
+.other #google:hover{
+    opacity: 0.8;
+}
+.other #twitter:hover{
+    opacity: 0.8;
+}
+.other #facebook:hover{
+    opacity: 0.8;
+}
+form p:last-child{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+form p:last-child > a{
+    padding-left: 5px;
+}
