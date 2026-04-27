@@ -1,23 +1,23 @@
 const chiens = [
   // ROTTWEILER
-  { nom: "Rex", race: "rottweiler", age: 3, image: "images/rott1.jpg" },
-  { nom: "Luna", race: "rottweiler", age: 4, image: "images/rott2.jpg" },
-  { nom: "Thor", race: "rottweiler", age: 2, image: "images/rott3.jpg" },
+  { nom: "Rex", race: "rottweiler", age: 3, image: "images/rott/rott1.jpg" },
+  { nom: "Luna", race: "rottweiler", age: 4, image: "images/rott/rott2.jpg" },
+  { nom: "Thor", race: "rottweiler", age: 2, image: "images/rott/rott3.jpg" },
 
   // CANICHE
-  { nom: "Bella", race: "caniche", age: 1, image: "images/caniche1.jpg" },
-  { nom: "Snow", race: "caniche", age: 2, image: "images/caniche2.jpg" },
-  { nom: "Cookie", race: "caniche", age: 3, image: "images/caniche3.jpg" },
+  { nom: "Bella", race: "caniche", age: 1, image: "images/caniche/caniche1.jpg" },
+  { nom: "Snow", race: "caniche", age: 2, image: "images/caniche/caniche2.jpg" },
+  { nom: "Cookie", race: "caniche", age: 3, image: "images/caniche/caniche3.jpg" },
 
   // BERGER ALLEMAND
-  { nom: "Max", race: "berger-allemand", age: 5, image: "images/berger1.jpg" },
-  { nom: "Shadow", race: "berger-allemand", age: 3, image: "images/berger2.jpg" },
-  { nom: "Nero", race: "berger-allemand", age: 4, image: "images/berger3.jpg" },
+  { nom: "Max", race: "berger-allemand", age: 5, image: "images/berger/berger1.jpg" },
+  { nom: "Shadow", race: "berger-allemand", age: 3, image: "images/berger/berger2.jpg" },
+  { nom: "Nero", race: "berger-allemand", age: 4, image: "images/berger/berger3.jpg" },
 
   // PITBULL
-  { nom: "Rocky", race: "pitbull", age: 2, image: "images/pit1.jpg" },
-  { nom: "Blue", race: "pitbull", age: 1, image: "images/pit2.jpg" },
-  { nom: "Ghost", race: "pitbull", age: 3, image: "images/pit3.jpg" }
+  { nom: "Rocky", race: "pitbull", age: 2, image: "images/pit/pit1.jpg" },
+  { nom: "Blue", race: "pitbull", age: 1, image: "images/pit/pit2.jpg" },
+  { nom: "Ghost", race: "pitbull", age: 3, image: "images/pit/pit3.jpg" }
 ];
 
 // Récupération de la race dans l'URL
