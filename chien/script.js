@@ -1,11 +1,23 @@
-// Base de données simple
 const chiens = [
-  { nom: "Rex", race: "rottweiler", age: 3, image: "https://place-puppy.com/300x300" },
-  { nom: "Bella", race: "caniche", age: 2, image: "https://place-puppy.com/301x301" },
-  { nom: "Max", race: "berger-allemand", age: 4, image: "https://place-puppy.com/302x302" },
-  { nom: "Rocky", race: "pitbull", age: 1, image: "https://place-puppy.com/303x303" },
-  { nom: "Luna", race: "rottweiler", age: 5, image: "https://place-puppy.com/304x304" },
-  { nom: "Snow", race: "caniche", age: 1, image: "https://place-puppy.com/305x305" }
+  // ROTTWEILER
+  { nom: "Rex", race: "rottweiler", age: 3, image: "images/rott1.jpg" },
+  { nom: "Luna", race: "rottweiler", age: 4, image: "images/rott2.jpg" },
+  { nom: "Thor", race: "rottweiler", age: 2, image: "images/rott3.jpg" },
+
+  // CANICHE
+  { nom: "Bella", race: "caniche", age: 1, image: "images/caniche1.jpg" },
+  { nom: "Snow", race: "caniche", age: 2, image: "images/caniche2.jpg" },
+  { nom: "Cookie", race: "caniche", age: 3, image: "images/caniche3.jpg" },
+
+  // BERGER ALLEMAND
+  { nom: "Max", race: "berger-allemand", age: 5, image: "images/berger1.jpg" },
+  { nom: "Shadow", race: "berger-allemand", age: 3, image: "images/berger2.jpg" },
+  { nom: "Nero", race: "berger-allemand", age: 4, image: "images/berger3.jpg" },
+
+  // PITBULL
+  { nom: "Rocky", race: "pitbull", age: 2, image: "images/pit1.jpg" },
+  { nom: "Blue", race: "pitbull", age: 1, image: "images/pit2.jpg" },
+  { nom: "Ghost", race: "pitbull", age: 3, image: "images/pit3.jpg" }
 ];
 
 // Récupération de la race dans l'URL
